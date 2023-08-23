@@ -1,0 +1,34 @@
+#include <stdio.h>
+#include <limits.h>
+
+int main() {
+    int i, arr[10], n;
+    printf("Enter the number of elements in the array: ");
+    scanf("%d", &n);
+
+    for (i = 0; i < n; i++) {
+        printf("Enter the number in the array: ");
+        scanf("%d", &arr[i]);
+    }
+
+   
+    int Count[1000] = {0}; 
+
+    for (i = 0; i < n; i++) {
+        Count[arr[i]]++;
+    }
+
+    int minElement = -1;
+    int minCount = INT_MAX;
+
+    for (i = 0; i < 1000; i++) {
+        if (Count[i] > 0 && Count[i] < minCount) {
+            minCount = Count[i];
+            minElement = i;
+        }
+    }
+
+    printf("The element that occurs the minimum number of times is %d repeated %d times.\n", minElement, minCount);
+
+    return 0;
+}
