@@ -1,0 +1,34 @@
+#include<stdio.h>
+int main(){
+	int i,arr[10],count=0,element,n,count1;
+	printf("enter the number of elemnts in the array");
+	scanf("%d",&n);
+	for(i=0;i<n;i++){
+		printf("enter the numbers in the array");
+		scanf("%d",&arr[i]);
+		
+	}
+	for(i=0;i<n;i++){
+		if(count==0){
+			count++;
+			element=arr[i];
+		}
+		else if (arr[i]==element){
+			count++;
+		}
+		else{
+			count--;
+		}
+	}
+	for(i=0;i<n;i++){
+		if(arr[i]==element){
+			count1++;
+		}
+	
+	}
+	if(count1>n/2){
+		printf("The majority element is %d repeted for :%d\n",element,count1);
+	}
+	
+
+}
